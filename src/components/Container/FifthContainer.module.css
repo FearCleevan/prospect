@@ -1,0 +1,103 @@
+.fifthContainer {
+    height: 286px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .card {
+    background-color: #cc3e6d;
+    border-radius: 12px;
+    color: white;
+    padding: 2rem;
+    flex: 1;
+    transition: all 0.3s ease;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .centerCard {
+    flex: 1.5;
+    background-color: #e26765ea;
+    color: white;
+  }
+  
+  .percentage {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    font-weight: 500;
+  }
+  
+  .source {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .centerCard .source {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .centerCard:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .cardsContainer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .card, .centerCard {
+      width: 100%;
+      max-width: 500px;
+      flex: none;
+      height: auto;
+    }
+    
+    .fifthContainer {
+      height: auto;
+      padding: 3rem 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .percentage {
+      font-size: 2rem;
+    }
+    
+    .description {
+      font-size: 0.9rem;
+    }
+  }

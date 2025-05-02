@@ -1,0 +1,166 @@
+.thirdContainer {
+    height: 488px;
+    width: 100%;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.thirdBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Updated gradient with your colors */
+    background: linear-gradient(160deg,
+            #b52555fd 0%,
+            #e26765e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageOverlay {
+    position: absolute;
+    right: 2%;
+    width: 1200px;
+    height: 90%;
+    z-index: -1;
+}
+
+.content {
+    max-width: 1200px;
+    text-align: left;
+    /* Changed to left */
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    margin-right: 15%;
+    /* Added left margin */
+}
+
+/* Updated text styles */
+.title {
+    font-size: 1rem;
+    /* h6 size */
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 37px;
+    /* Updated to 37px */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 37px;
+    /* Updated to 37px */
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 400;
+    /* Updated to 400 */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    height: 2px;
+    width: 100px;
+    background-color: white;
+    margin: 2rem 0;
+    /* Changed to left alignment */
+}
+
+.ctaButton {
+    background-color: white;
+    color: rgba(168, 37, 81, 0.986);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.ctaButton:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles - center everything on tablet/mobile */
+@media (max-width: 1024px) {
+    .imageOverlay {
+        width: 650px;
+    }
+
+    .content {
+        text-align: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .divider {
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .thirdContainer {
+        height: auto;
+        min-height: 488px;
+    }
+
+    .imageOverlay {
+        width: 750px;
+    }
+
+    .content {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 0.875rem;
+    }
+
+    .subtitle,
+    .tagline {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .imageOverlay {
+        right: -40px;
+        width: 950px;
+    }
+
+    .title {
+        font-size: 0.75rem;
+    }
+
+    .subtitle,
+    .tagline {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+
+    .ctaButton {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}

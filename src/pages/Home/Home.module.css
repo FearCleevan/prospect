@@ -1,5 +1,403 @@
 .home {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.heroBackground {
+  background:
+    linear-gradient(160deg,
+      #b52555f8 0%,
+      #e26765ea 100%),
+    url('../../assets/young-pregnant-woman-work-2048x1365.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.mainContainer {
+  display: flex;
+  height: 603px;
+  width: 100%;
+  margin: 0;
+  padding: 0 120px;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.leftColumn {
+  flex: 1;
+  z-index: 1;
+  max-width: 50%;
+  padding-left: 60px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.rightColumn {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  max-width: 50%;
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 3.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.highlight {
+  color: #f8c6d2;
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.884);
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+/* Combined Select & Button Styles */
+.combinedContainer {
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.combinedSelect {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.selectDisplay {
+  padding: 0.9rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: none;
+  height: 100%;
+}
+
+.combinedButton {
+  background-color: #740c54;
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-weight: 600;
+  font-size: .8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border: 1px solid #740c54;
+  margin-left: -1px;
+}
+
+.selectDisplay:hover {
+  background-color: white;
+}
+
+.dropdownArrow {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.dropdownOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 0;
+  overflow: hidden;
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.dropdownOption {
+  padding: 0.8rem 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropdownOption:hover {
+  background-color: #f8c6d2;
+  color: #b02f53;
+}
+
+.combinedButton:hover {
+  background-color: #5d0a43;
+  transform: translateY(-1px);
+}
+
+.disabledOption {
+  color: #999 !important;
+  cursor: not-allowed !important;
+  background-color: #f5f5f5 !important;
+}
+
+.disabledOption:hover {
+  background-color: #f5f5f5 !important;
+  color: #999 !important;
+}
+
+.combinedButton:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  border-color: #cccccc;
+}
+
+.combinedButton:disabled:hover {
+  transform: none;
+  background-color: #cccccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .mainContainer {
+    padding: 0 40px;
   }
+
+  .leftColumn {
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .mainContainer {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 30px;
+    gap: 2rem;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    max-width: 100%;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .rightColumn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 30px 20px;
+  }
+
+  .leftColumn {
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .combinedContainer {
+    flex-direction: row;
+  }
+
+  .selectDisplay {
+    border-radius: 50px 0 0 50px;
+    margin-bottom: 0;
+  }
+
+  .combinedButton {
+    border-radius: 0 50px 50px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding: 25px 15px;
+  }
+
+  .leftColumn {
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .combinedButton {
+    padding: 0 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .selectDisplay {
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* Other existing styles */
+.ctaButton {
+  background-color: white;
+  color: #b02f53;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton:hover {
+  background-color: #f8c6d2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mainLogo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 570px;
+  width: auto;
+  z-index: 1;
+}
+
+.conversionGif {
+  position: absolute;
+  width: 200px;
+  top: -2%;
+  right: 15%;
+  z-index: 2;
+}
+
+.profitGif {
+  position: absolute;
+  width: 200px;
+  top: 8%;
+  left: -4%;
+  z-index: 2;
+}
+
+.emailGif {
+  position: absolute;
+  width: 160px;
+  bottom: 38%;
+  left: -7%;
+  z-index: 2;
+}
+
+/* Scroll to top arrow styles */
+.scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #740c54;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scrollToTop:hover {
+  background-color: #5d0a43;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scrollToTop svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Animation for the arrow */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scrollToTop {
+  animation: bounce 2s infinite;
+}
+
+/* Stop animation when not hovering */
+.scrollToTop:hover {
+  animation: none;
+}
+
+/* Responsive adjustments for scroll arrow */
+@media (max-width: 768px) {
+  .scrollToTop {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .scrollToTop svg {
+    width: 20px;
+    height: 20px;
+  }
+}
