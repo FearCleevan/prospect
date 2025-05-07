@@ -10,6 +10,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -17,7 +18,9 @@ export default function Footer() {
       <div className={styles.footerContainer}>
         {/* Company Info with Logo and Socials */}
         <div className={styles.footerSection}>
-          <img src={logos} alt="Launchpad Logo" className={styles.footerLogo} />
+          <Link to="/">
+            <img src={logos} alt="Launchpad Logo" className={styles.footerLogo} />
+          </Link>
           <p className={styles.companyDescription}>
             Founded in 2017, The Launchpad is an innovative organization with a
             leadership team boasting over 40 years of combined experience.
@@ -45,11 +48,11 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>What we do</h3>
           <ul className={styles.footerList}>
-            <li>Appointment Setting</li>
-            <li>B2B Lead Generation</li>
-            <li>Medical Billing</li>
-            <li>Customer Service</li>
-            <li>Virtual Assistance</li>
+            <li><Link to="/lead-generation" className={styles.footerLink}>Appointment Setting</Link></li>
+            <li><Link to="/lead-generation" className={styles.footerLink}>B2B Lead Generation</Link></li>
+            <li><Link to="/medical-billing" className={styles.footerLink}>Medical Billing</Link></li>
+            <li><Link to="/customer-service" className={styles.footerLink}>Customer Service</Link></li>
+            <li><Link to="/virtual-assistant" className={styles.footerLink}>Virtual Assistance</Link></li>
           </ul>
         </div>
 
@@ -57,18 +60,18 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>Company</h3>
           <ul className={styles.footerList}>
-            <li>About The Launchpad Inc</li>
-            <li>Referral Program</li>
-            <li>Careers</li>
-            <li>FAQs</li>
+            <li><Link to="/our-company" className={styles.footerLink}>About The Launchpad Inc</Link></li>
+            <li><Link to="/referral-program" className={styles.footerLink}>Referral Program</Link></li>
+            <li><Link to="/careers" className={styles.footerLink}>Careers</Link></li>
+            <li><Link to="/faqs" className={styles.footerLink}>FAQs</Link></li>
           </ul>
         </div>
 
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>Resources</h3>
           <ul className={styles.footerList}>
-            <li>The Cost of DIY Lead Gen</li>
-            <li>Company Profile</li>
+            <li><Link to="/cost-of-diy" className={styles.footerLink}>The Cost of DIY Lead Gen</Link></li>
+            <li><Link to="/company-profile" className={styles.footerLink}>Company Profile</Link></li>
           </ul>
         </div>
 

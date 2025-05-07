@@ -128,3 +128,61 @@
     padding: 2rem 1rem;
   }
 }
+
+/* Add these styles to your Footer.module.css */
+
+/* Logo hover effect */
+.footerLogo {
+  transition: transform 0.3s ease;
+}
+
+.footerLogo:hover {
+  transform: scale(1.05);
+}
+
+/* Footer link styles */
+.footerLink {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.footerLink:hover {
+  color: #ffffffb4;
+}
+
+.footerLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.footerLink:hover::after {
+  width: 100%;
+}
+
+/* Social icons hover effect */
+.socialIcons a {
+  transition: transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: translateY(-3px);
+}
+
+/* Contact items hover effect */
+.contactItem span {
+  transition: color 0.3s ease;
+}
+
+.contactItem:hover span {
+  color: #ffffffb4;
+}

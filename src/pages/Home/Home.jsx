@@ -7,16 +7,21 @@ import ThirdContainer from '../../components/Container/ThirdContainer';
 import FourthContainer from '../../components/Container/FourthContainer';
 import FifthContainer from '../../components/Container/FifthContainer';
 import SixthContainer from '../../components/Container/SixthContainer';
+import SeventhContainer from '../../components/Container/SeventhContainer';
+import EightContainer from '../../components/Container/EightContainer';
+import NinthContainer from '../../components/Container/NinthContainer';
+import GetQuote from '../../components/modals/GetQoute';
 import logo1 from "../../assets/Logo-1.webp";
 import conversionGif from "../../assets/ConversionRate3DAnimatedIcon-ezgif.com-crop.gif";
 import profitGif from "../../assets/Profit-3D-Animated-Icon.gif";
 import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
-import SeventhContainer from '../../components/Container/SeventhContainer';
+
 
 export default function Home() {
   const [selectedOption, setSelectedOption] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [showScrollArrow, setShowScrollArrow] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false); 
   const dropdownRef = useRef(null);
   const homeRef = useRef(null);
 
@@ -117,6 +122,7 @@ export default function Home() {
                 </div>
                 <button 
                   className={styles.combinedButton}
+                  onClick={() => setShowQuoteModal(true)}
                 >
                   GET A QUOTE
                 </button>
@@ -137,7 +143,14 @@ export default function Home() {
       <FifthContainer /> 
       <SixthContainer />
       <SeventhContainer />
+      <EightContainer />
+      <NinthContainer />
       <Footer />
+
+      <GetQuote 
+        isOpen={showQuoteModal} 
+        onClose={() => setShowQuoteModal(false)}
+      />
 
       {/* Scroll to top arrow */}
       {showScrollArrow && (
