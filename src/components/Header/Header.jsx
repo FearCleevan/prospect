@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import logo from '../../assets/LP-logo.webp';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import GetQuote from '../modals/GetQoute'; // Import the modal component
@@ -17,13 +17,13 @@ export default function Header() {
   }, [location]);
 
   const isActive = (path) => {
-    return activePath === path || 
-           (path === '#solutions' && (
-             activePath.includes('/lead-generation') ||
-             activePath.includes('/medical-billing') ||
-             activePath.includes('/virtual-assistant') ||
-             activePath.includes('/customer-service')
-           ));
+    return activePath === path ||
+      (path === '/solutions' && (
+        activePath.includes('/lead-generation') ||
+        activePath.includes('/medical-billing') ||
+        activePath.includes('/virtual-assistant') ||
+        activePath.includes('/customer-service')
+      ));
   };
 
   const isDropdownItemActive = (path) => {
@@ -34,7 +34,7 @@ export default function Header() {
     <>
       <header className={styles.header}>
         <div className={styles.headerContainer}>
-          <button 
+          <button
             className={styles.mobileMenuButton}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -48,91 +48,91 @@ export default function Header() {
           <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
             <ul className={styles.menu}>
               <li>
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className={`${styles.menuItem} ${isActive('/') ? styles.active : ''}`}
                 >
                   Home
                 </a>
               </li>
-              <li 
+              <li
                 className={styles.dropdown}
                 onMouseEnter={() => setIsSolutionsOpen(true)}
                 onMouseLeave={() => setIsSolutionsOpen(false)}
                 onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
               >
-                <a 
-                  href="#solutions" 
+                <a
+                  href="#solutions"
                   className={`${styles.menuItem} ${isActive('#solutions') ? styles.active : ''}`}
                 >
                   Solutions <FaChevronDown className={styles.dropdownIcon} />
                 </a>
                 {isSolutionsOpen && (
                   <div className={styles.dropdownContent}>
-                    <a 
-                      href="/lead-generation"
+                    <Link
+                      to="/lead-generation"
                       className={isDropdownItemActive('/lead-generation') ? styles.activeDropdownItem : ''}
                     >
                       Lead Generation and Appointment Setting
-                    </a>
-                    <a 
-                      href="/medical-billing"
+                    </Link>
+                    <Link
+                      to="/medical-billing"
                       className={isDropdownItemActive('/medical-billing') ? styles.activeDropdownItem : ''}
                     >
                       Medical Billing
-                    </a>
-                    <a 
-                      href="/virtual-assistant"
+                    </Link>
+                    <Link
+                      to="/virtual-assistant"
                       className={isDropdownItemActive('/virtual-assistant') ? styles.activeDropdownItem : ''}
                     >
                       Virtual Assistant
-                    </a>
-                    <a 
-                      href="/customer-service"
+                    </Link>
+                    <Link
+                      to="/customer-service"
                       className={isDropdownItemActive('/customer-service') ? styles.activeDropdownItem : ''}
                     >
                       Customer Service
-                    </a>
+                    </Link>
                   </div>
                 )}
               </li>
               <li>
-                <a 
-                  href="/faqs" 
+                <Link
+                  to="/faqs"
                   className={`${styles.menuItem} ${isActive('/faqs') ? styles.active : ''}`}
                 >
                   FAQS
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/careers" 
+                <a
+                  href="/careers"
                   className={`${styles.menuItem} ${isActive('/careers') ? styles.active : ''}`}
                 >
                   Careers
                 </a>
               </li>
               <li>
-                <a 
-                  href="/contact-us" 
+                <Link
+                  to="/contact-us"
                   className={`${styles.menuItem} ${isActive('/contact-us') ? styles.active : ''}`}
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="/our-company" 
+                <Link
+                  to="/our-company"
                   className={`${styles.menuItem} ${isActive('/our-company') ? styles.active : ''}`}
                 >
                   Our Company
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
 
           <div className={styles.quoteButton}>
-            <button 
+            <button
               className={styles.button}
               onClick={() => setShowQuoteModal(true)} // Open modal on click
             >
@@ -143,8 +143,8 @@ export default function Header() {
       </header>
 
       {/* GetQuote Modal */}
-      <GetQuote 
-        isOpen={showQuoteModal} 
+      <GetQuote
+        isOpen={showQuoteModal}
         onClose={() => setShowQuoteModal(false)}
       />
     </>
