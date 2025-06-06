@@ -1,0 +1,142 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.heroBackground {
+    background:
+      linear-gradient(160deg, #b52555f8 0%, #e26765ea 100%),
+      url('../../assets/young-pregnant-woman-work-2048x1365.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.mainContainer {
+    display: flex;
+    min-height: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.centerContent {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 80px 12px 80px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.contactLink {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contactLink:hover,
+.contactLink:focus {
+    color: #f7c0cb;
+    text-decoration: underline;
+}
+
+/* Scroll to top arrow styles */
+.scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #740c54;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+}
+.scrollToTop:hover {
+    background-color: #5d0a43;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: none;
+}
+
+.scrollToTop svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 30px 10px;
+    }
+    .centerContent {
+        padding: 50px 6px 50px 6px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .scrollToTop {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .scrollToTop svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .centerContent {
+        padding: 40px 2px 40px 2px;
+    }
+    .title {
+        font-size: 22px;
+    }
+    .subtitle {
+        font-size: 15px;
+    }
+}

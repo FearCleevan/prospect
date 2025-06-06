@@ -8,6 +8,7 @@ import profitGif from "../../assets/Profit-3D-Animated-Icon.gif";
 import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
 import VirtualSecondContainer from './VirtualSecondContainer';
 import VirtualThirdContainer from './VirtualThirdContainer';
+import VirtualFourthContainer from './VirtualFourthContainer';
 
 
 export default function VirtualAssistantContainer() {
@@ -66,6 +67,7 @@ export default function VirtualAssistantContainer() {
             
             <VirtualSecondContainer />
             <VirtualThirdContainer />
+            <VirtualFourthContainer />
             <Footer />
 
             {/* Scroll to top arrow */}

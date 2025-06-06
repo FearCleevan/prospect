@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './GetQoute.module.css';
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCV919Gzy5-zlqsYX2Tu21I94-FbSkQmGUksE96lUBtuqmhijjoh5o46DS10Pc92Ec/exec';
+
 const GetQuote = ({ isOpen, onClose }) => {
     // Form state
     const [formData, setFormData] = useState({
@@ -17,8 +19,8 @@ const GetQuote = ({ isOpen, onClose }) => {
         industry: '',
         targets: '',
         services: [],
-        date: null,
-        time: '09:00 AM',
+        appointDate: null,
+        appointTime: '09:00 AM',
         timezone: ''
     });
 
@@ -26,7 +28,9 @@ const GetQuote = ({ isOpen, onClose }) => {
     const [step, setStep] = useState(1);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [submittedAt, setSubmittedAt] = useState({ date: '', time: '' });
     const [errors, setErrors] = useState({});
+    const [errorMsg, setErrorMsg] = useState('');
 
     // Options
     const serviceOptions = [
@@ -52,7 +56,7 @@ const GetQuote = ({ isOpen, onClose }) => {
     const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
         <input
             type="text"
-            className={`${styles.dateInput} ${errors.date ? styles.errorInput : ''}`}
+            className={`${styles.dateInput} ${errors.appointDate ? styles.errorInput : ''}`}
             onClick={onClick}
             value={value}
             ref={ref}
@@ -90,7 +94,7 @@ const GetQuote = ({ isOpen, onClose }) => {
         }
 
         if (step === 4) {
-            if (!formData.date) newErrors.date = 'Date is required';
+            if (!formData.appointDate) newErrors.appointDate = 'Date is required';
             if (!formData.timezone) newErrors.timezone = 'Timezone is required';
         }
 
@@ -117,8 +121,8 @@ const GetQuote = ({ isOpen, onClose }) => {
     };
 
     const handleDateChange = (date) => {
-        setFormData(prev => ({ ...prev, date }));
-        if (errors.date) setErrors(prev => ({ ...prev, date: '' }));
+        setFormData(prev => ({ ...prev, appointDate: date }));
+        if (errors.appointDate) setErrors(prev => ({ ...prev, appointDate: '' }));
     };
 
     const nextStep = () => validateStep() && setStep(prev => Math.min(prev + 1, 4));
@@ -137,65 +141,66 @@ const GetQuote = ({ isOpen, onClose }) => {
             industry: '',
             targets: '',
             services: [],
-            date: null,
-            time: '09:00 AM',
+            appointDate: null,
+            appointTime: '09:00 AM',
             timezone: ''
         });
         setErrors({});
     };
 
+    // Unified handleSubmit, using Google Script and x-www-form-urlencoded
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrorMsg('');
         if (!validateStep()) return;
 
         setIsSubmitting(true);
-        setErrors({});
 
         try {
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbt5BRD9KXsY7qnbfmCfoOaDA-f41jVG1bUyhiYGH9eHuwV6-2PNN5ambSjSljnQLg/exec';
+            // Prepare data for x-www-form-urlencoded
+            const params = new URLSearchParams();
 
-            // Prepare form data
-            const submissionData = {
-                ...formData,
-                date: formData.date ? formData.date.toISOString() : null
-            };
-
-            // Make the POST request with JSON data
-            const response = await fetch(SCRIPT_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(submissionData),
-                redirect: 'follow'
+            Object.entries(formData).forEach(([key, value]) => {
+                if (Array.isArray(value)) {
+                    // For checkboxes ("services"), join as CSV
+                    params.append(key, value.join(', '));
+                } else if (key === 'appointDate' && value) {
+                    // Date as yyyy-MM-dd
+                    params.append('appointDate', value instanceof Date ? value.toISOString().split('T')[0] : value);
+                } else {
+                    params.append(key, value);
+                }
             });
 
-            // Check if the response is OK
+            params.append('appointTime', formData.appointTime);
+
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: params.toString(),
+            });
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
-            // Parse the response
             const result = await response.json();
 
             if (!result.success) {
                 throw new Error(result.error || 'Submission failed');
             }
 
-            // Success handling
             setIsSuccess(true);
+            setSubmittedAt({ date: result.date, time: result.time });
             setTimeout(() => {
-                onClose();
-                setStep(1);
                 setIsSuccess(false);
+                onClose && onClose();
+                setStep(1);
                 resetForm();
             }, 2000);
 
         } catch (error) {
-            console.error('Submission error:', error);
-            setErrors({
-                submit: error.message || 'Failed to submit form. Please try again later.'
-            });
+            setErrorMsg(error.message || 'Failed to submit form. Please try again later.');
         } finally {
             setIsSubmitting(false);
         }
@@ -217,7 +222,12 @@ const GetQuote = ({ isOpen, onClose }) => {
                             <path className={styles.checkmarkCheck} fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                         </svg>
                         <h3 style={{ color: '#333' }}>Thank You!</h3>
-                        <p style={{ color: '#333' }}>We'll get back to you shortly.</p>
+                        <p style={{ color: '#333' }}>
+                            We'll get back to you shortly.<br />
+                            <span style={{ fontSize: '0.95em', color: '#888' }}>
+                                Submitted on {submittedAt.date} at {submittedAt.time}
+                            </span>
+                        </p>
                     </div>
                 ) : isSubmitting ? (
                     <div className={styles.loadingAnimation}>
@@ -420,10 +430,10 @@ const GetQuote = ({ isOpen, onClose }) => {
                                 <h3 className={styles.stepTitle}>Preferred Date and Time Selection</h3>
                                 <div className={styles.dateTimeContainer}>
                                     <div className={styles.formGroup}>
-                                        <label htmlFor="date">Choose date*</label>
+                                        <label htmlFor="appointDate">Choose date*</label>
                                         <DatePicker
-                                            id="date"
-                                            selected={formData.date}
+                                            id="appointDate"
+                                            selected={formData.appointDate}
                                             onChange={handleDateChange}
                                             minDate={new Date()}
                                             dateFormat="MMMM d, yyyy"
@@ -434,14 +444,14 @@ const GetQuote = ({ isOpen, onClose }) => {
                                             popperClassName={styles.popper}
                                             showPopperArrow={false}
                                         />
-                                        {errors.date && <span className={styles.errorMessage}>{errors.date}</span>}
+                                        {errors.appointDate && <span className={styles.errorMessage}>{errors.appointDate}</span>}
                                     </div>
                                     <div className={styles.formGroup}>
-                                        <label htmlFor="time">Time</label>
+                                        <label htmlFor="appointTime">Time</label>
                                         <select
-                                            id="time"
-                                            name="time"
-                                            value={formData.time}
+                                            id="appointTime"
+                                            name="appointTime"
+                                            value={formData.appointTime}
                                             onChange={handleChange}
                                             className={styles.timeInput}
                                         >
@@ -468,6 +478,10 @@ const GetQuote = ({ isOpen, onClose }) => {
                                     {errors.timezone && <span className={styles.errorMessage}>{errors.timezone}</span>}
                                 </div>
                             </div>
+
+                            {errorMsg && (
+                                <div className={styles.errorMsg}>{errorMsg}</div>
+                            )}
 
                             <div className={styles.formNavigation}>
                                 {step > 1 && (
@@ -503,6 +517,6 @@ const GetQuote = ({ isOpen, onClose }) => {
             </div>
         </div>
     );
-}
+};
 
 export default GetQuote;
