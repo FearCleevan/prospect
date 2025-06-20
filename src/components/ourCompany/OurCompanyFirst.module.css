@@ -1,0 +1,98 @@
+.container {
+    min-height: 489px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.contentWrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 60px;
+    align-items: center;
+}
+
+.leftSection {
+    width: 540px;
+    height: 449px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dnaTitle {
+    font-size: 30px;
+    font-weight: 600;
+    color: #B52556;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.dnaContent {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+}
+
+.rightSection {
+    width: 540px;
+    height: 429px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.companyImage {
+    width: 540px;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .contentWrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .leftSection, .rightSection {
+        width: 100%;
+        height: auto;
+    }
+    
+    .leftSection {
+        order: 2;
+    }
+    
+    .rightSection {
+        order: 1;
+    }
+    
+    .dnaTitle {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .contentWrapper {
+        gap: 30px;
+    }
+    
+    .dnaTitle {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .companyImage {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,272 @@
+.container {
+    width: 100%;
+    min-height: 700px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.headerArea {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.testimoniesLabel {
+    color: #263143;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #13294b;
+    margin: 0;
+}
+
+.carouselArea {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: auto;
+    padding: 20px 0 60px;
+}
+
+.swiperSlide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background: #e7e7e7;
+    border-radius: 40px 0 4cm 0;
+    /* top-left and bottom-right only */
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    padding: 40px 25px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.quoteMarkTop {
+    font-size: 48px;
+    color: #b62756;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    opacity: 0.7;
+}
+
+.quote {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.quoteMarkBottom {
+    font-size: 48px;
+    color: #b62756;
+    font-weight: bold;
+    line-height: 1;
+    position: absolute;
+    right: 20px;
+    bottom: 70px;
+    opacity: 0.7;
+}
+
+.profileArea {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.profileImg {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 12px;
+    background: #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+    color: #b62756;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    display: block;
+}
+
+.role {
+    color: #b62756;
+    font-size: 14px;
+    font-weight: 450;
+    letter-spacing: 0.01em;
+    display: block;
+    opacity: 0.9;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.bullet {
+    width: 10px;
+    height: 10px;
+    background: #df6364;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.bulletActive {
+    background: #b62756;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+    .headerArea {
+        margin-bottom: 50px;
+    }
+
+    .testimoniesLabel {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 38px;
+    }
+
+    .card {
+        border-radius: 30px;
+        min-height: 400px;
+    }
+
+    .quote {
+        font-size: 16px;
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 60px 0;
+    }
+
+    .headerArea {
+        margin-bottom: 60px;
+    }
+
+    .testimoniesLabel {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 44px;
+    }
+
+    .swiper {
+        padding: 20px 0 80px;
+    }
+
+    .card {
+        padding: 44px 36px 30px;
+        border-radius: 36px;
+        min-height: 420px;
+    }
+
+    .quoteMarkTop {
+        font-size: 54px;
+        left: 32px;
+        top: 22px;
+    }
+
+    .quote {
+        margin-top: 28px;
+        margin-bottom: 50px;
+        font-size: 17px;
+    }
+
+    .quoteMarkBottom {
+        font-size: 54px;
+        right: 32px;
+        bottom: 90px;
+    }
+
+    .profileArea {
+        left: 36px;
+        bottom: 32px;
+    }
+
+    .profileImg {
+        width: 62px;
+        height: 62px;
+        border: 4px solid #fff;
+        margin-right: 14px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .role {
+        font-size: 15px;
+    }
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+    .container {
+        padding: 80px 0;
+    }
+}

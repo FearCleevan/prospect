@@ -70,8 +70,18 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h3 className={styles.footerHeading}>Resources</h3>
           <ul className={styles.footerList}>
-            <li><Link to="/cost-of-diy" className={styles.footerLink}>The Cost of DIY Lead Gen</Link></li>
-            <li><Link to="/company-profile" className={styles.footerLink}>Company Profile</Link></li>
+            <li><Link to="/cost-of-diy-lead-gen" className={styles.footerLink}>The Cost of DIY Lead Gen</Link></li>
+            <li>
+              <a
+                href="https://leadgeneration.thelaunchpadteam.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                Company Profile
+              </a>
+            </li>
+
           </ul>
         </div>
 

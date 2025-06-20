@@ -9,6 +9,7 @@ import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
 import VirtualSecondContainer from './VirtualSecondContainer';
 import VirtualThirdContainer from './VirtualThirdContainer';
 import VirtualFourthContainer from './VirtualFourthContainer';
+import { Helmet } from 'react-helmet';       
 
 
 export default function VirtualAssistantContainer() {
@@ -40,6 +41,10 @@ export default function VirtualAssistantContainer() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Virtual Assistant - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>

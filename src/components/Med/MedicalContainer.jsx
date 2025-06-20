@@ -11,6 +11,7 @@ import ThirdMedicalContainer from './ThirdMedicalContainer';
 import FourthContainer from './FourthContainer';
 import FifthContainer from './FifthContainer';
 import SixthContainer from './SixthContainer';
+import { Helmet } from 'react-helmet';     
 
 export default function MedicalContainer() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
@@ -41,6 +42,10 @@ export default function MedicalContainer() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Medical Billing - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>

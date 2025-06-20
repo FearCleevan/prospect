@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './Faqs.module.css';
+import styles from './Careers.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import FaqsFirst from './FaqsFirst';
-import { Helmet } from 'react-helmet'; 
+import CareersFirst from './CareersFirst';
+import CareersSecond from './CareersSecond';
+import CareersThird from './CareersThird';
+import { Helmet } from 'react-helmet';    
 
-export default function Faqs() {
+export default function Careers() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
     const homeRef = useRef(null);
 
@@ -35,22 +37,32 @@ export default function Faqs() {
     return (
         <div className={styles.page} ref={homeRef}>
             <Helmet>
-                <title>FAQS - Top Outsourcing Firm in the Philippines</title>
+                <title>Careers - Top Outsourcing Firm in the Philippines</title>
                 <meta property="og:url" content={window.location.href} />
             </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>
                     <div className={styles.centerContent}>
-                        <h1 className={styles.title}>Frequently Asked Questions</h1>
+                        <h1 className={styles.title}>Start Your Success Story and Grow With Us</h1>
                         <p className={styles.subtitle}>
-                            If you can’t find the answer you are looking for here, please{' '}
-                            <a className={styles.contactLink} href="/contact">contact us</a>.
+                            Be part of our story and help us shape an industry. Check out our open positions to start your career with The Launchpad.
                         </p>
+                        <a
+                            href="https://forms.gle/Ss3ESA5UMCYnCvYR6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.applyButton}
+                        >
+                            <span className={styles.applyText}>Apply Now</span>
+                        </a>
+
                     </div>
                 </div>
             </div>
-            <FaqsFirst />
+            <CareersFirst />
+            <CareersSecond />
+            <CareersThird />
             <Footer />
             {showScrollArrow && (
                 <div className={styles.scrollToTop} onClick={scrollToTop}>

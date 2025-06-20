@@ -10,6 +10,8 @@ import CustomerServiceFirst from './CustomerServiceFirst';
 import CustomerServiceSecond from './CustomerServiceSecond';
 import CustomerServiceThird from './CustomerServiceThird';
 import CustomerServiceFourth from './CustomerServiceFourth';
+import { Helmet } from 'react-helmet';            
+
 
 export default function CustomerService() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
@@ -40,6 +42,10 @@ export default function CustomerService() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Customer Service - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>

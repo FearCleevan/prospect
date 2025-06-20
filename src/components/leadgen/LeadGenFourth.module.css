@@ -1,0 +1,148 @@
+.container {
+  width: 100%;
+  min-height: 1057px;
+  background: linear-gradient(180deg, #db6563 0%, #b93658 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 0 0;
+  box-sizing: border-box;
+}
+
+.aboutSection {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto 44px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 24px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.description {
+  font-size: 17px;
+  color: #fff;
+  line-height: 1.7;
+  max-width: 1160px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.cardsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardsRow {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-bottom: 36px;
+}
+
+.cardsRow:last-child {
+  margin-bottom: 0;
+}
+
+.card {
+  width: 346.66px;
+  min-width: 346.66px;
+  height: 308.8px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(24,30,38,0.13);
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.iconHolder {
+  width: 91.60px;
+  height: 80px;
+  background: #f7f7fb;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px 0 rgba(24,30,38,0.11);
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222b36;
+  margin-bottom: 12px;
+}
+
+.cardText {
+  font-size: 13px;
+  color: #454545;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .cardsSection {
+    max-width: 1000px;
+  }
+  .aboutSection {
+    max-width: 900px;
+    padding: 0 12px;
+  }
+  .card {
+    min-width: 300px;
+    width: 300px;
+  }
+  .cardsRow {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutSection {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .cardsSection {
+    max-width: 100%;
+    padding: 0 10px;
+    height: auto;
+  }
+  .cardsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 36px 0 0 0;
+    height: auto;
+  }
+  .card {
+    min-width: 90vw;
+    width: 90vw;
+    height: auto;
+    padding: 28px 10px 20px 10px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .description {
+    font-size: 15px;
+  }
+}

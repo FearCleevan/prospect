@@ -1,0 +1,129 @@
+.container {
+    width: 100%;
+    min-height: 330.03px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.tabContainer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabNav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.tabButton {
+    min-width: 154.09px;
+    height: 46px;
+    background: #d9d9d9;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tabButton:not(.active):hover {
+    background: rgba(205, 73, 94, 0.8);
+}
+
+.tabButton:not(.active):hover .tabLabel {
+    color: #ffffff;
+}
+
+.tabButton.active {
+    background: #cd495e;
+}
+
+.tabLabel {
+    font-size: 20px;
+    font-weight: bold;
+    color: #54595F;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tabButton.active .tabLabel {
+    color: #ffffff;
+}
+
+.tabContent {
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    min-height: 150px;
+    /* Fixed minimum height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabContent p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .tabNav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabButton {
+        flex: 0 0 auto;
+        width: auto;
+        min-width: 120px;
+    }
+
+    .tabContent {
+        min-height: 200px;
+        /* Larger fixed height for mobile */
+    }
+
+    .tabContent p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabContent p {
+        font-size: 16px;
+    }
+
+    .tabLabel {
+        font-size: 16px;
+    }
+
+    .tabButton {
+        min-width: 100px;
+        height: 40px;
+        padding: 0 15px;
+    }
+}

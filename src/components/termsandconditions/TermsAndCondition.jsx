@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './Faqs.module.css';
+import styles from './TermsAndCondition.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import FaqsFirst from './FaqsFirst';
-import { Helmet } from 'react-helmet'; 
+import TermsAndConditionFirst from './TermsAndConditionFirst';
 
-export default function Faqs() {
+export default function TermsAndCondition() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
     const homeRef = useRef(null);
 
@@ -34,23 +33,16 @@ export default function Faqs() {
 
     return (
         <div className={styles.page} ref={homeRef}>
-            <Helmet>
-                <title>FAQS - Top Outsourcing Firm in the Philippines</title>
-                <meta property="og:url" content={window.location.href} />
-            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
+
                 <div className={styles.mainContainer}>
                     <div className={styles.centerContent}>
-                        <h1 className={styles.title}>Frequently Asked Questions</h1>
-                        <p className={styles.subtitle}>
-                            If you can’t find the answer you are looking for here, please{' '}
-                            <a className={styles.contactLink} href="/contact">contact us</a>.
-                        </p>
+                        <h1 className={styles.title}>Referral Program Terms and Conditions</h1>
                     </div>
                 </div>
             </div>
-            <FaqsFirst />
+            <TermsAndConditionFirst />
             <Footer />
             {showScrollArrow && (
                 <div className={styles.scrollToTop} onClick={scrollToTop}>

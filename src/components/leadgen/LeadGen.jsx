@@ -1,11 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './Faqs.module.css';
+import styles from './LeadGen.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import FaqsFirst from './FaqsFirst';
-import { Helmet } from 'react-helmet'; 
+import LeadGenFirst from './LeadGenFirst';
+import LeadGenSecond from './LeadGenSecond';
+import LeadGenThird from './LeadGenThird';
+import LeadGenFourth from './LeadGenFourth';
+import LeadGenFifth from './LeadGenFifth';
 
-export default function Faqs() {
+
+export default function LeadGen() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
     const homeRef = useRef(null);
 
@@ -34,23 +38,31 @@ export default function Faqs() {
 
     return (
         <div className={styles.page} ref={homeRef}>
-            <Helmet>
-                <title>FAQS - Top Outsourcing Firm in the Philippines</title>
-                <meta property="og:url" content={window.location.href} />
-            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>
                     <div className={styles.centerContent}>
-                        <h1 className={styles.title}>Frequently Asked Questions</h1>
+                        <h1 className={styles.title}>The Cost of Operating an In-House Lead Generation Program</h1>
                         <p className={styles.subtitle}>
-                            If you can’t find the answer you are looking for here, please{' '}
-                            <a className={styles.contactLink} href="/contact">contact us</a>.
+                            Discover the typical expenses with established and operating a fully managed, cross-channel lead generation program independently.
                         </p>
+                        <a
+                            href="https://forms.gle/Ss3ESA5UMCYnCvYR6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.applyButton}
+                        >
+                            <span className={styles.applyText}>Request a Custom Quote</span>
+                        </a>
+
                     </div>
                 </div>
             </div>
-            <FaqsFirst />
+            <LeadGenFirst />
+            <LeadGenSecond />
+            <LeadGenThird />
+            <LeadGenFourth />
+            <LeadGenFifth />
             <Footer />
             {showScrollArrow && (
                 <div className={styles.scrollToTop} onClick={scrollToTop}>

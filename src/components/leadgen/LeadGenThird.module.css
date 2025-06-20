@@ -1,0 +1,154 @@
+.container {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.content {
+    width: 100%;
+    max-width: 1120px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.statement {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+    text-align: left;
+}
+
+.priceContainer {
+    width: 100%;
+    max-width: 1120px;
+    height: 150.2px;
+    background: linear-gradient(180deg, #d96362 0%, #b93758 100%);
+    border-radius: 50px 0 50px 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.priceContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.priceTitle {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 60%;
+}
+
+.priceWrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.price {
+    font-size: 54px;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.monthly {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .content {
+        max-width: 900px;
+    }
+
+    .priceContainer {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 900px) {
+    .priceContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .priceTitle {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        max-width: 100%;
+    }
+
+    .statement {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .priceTitle {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 42px;
+    }
+
+    .monthly {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .statement {
+        font-size: 14px;
+    }
+
+    .priceContainer {
+        height: auto;
+        padding: 20px 15px;
+    }
+
+    .priceTitle {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 36px;
+    }
+
+    .monthly {
+        font-size: 16px;
+    }
+}

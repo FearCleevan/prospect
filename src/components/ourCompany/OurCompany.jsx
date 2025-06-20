@@ -1,11 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
-import styles from './Faqs.module.css';
+import styles from './OurCompany.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import FaqsFirst from './FaqsFirst';
-import { Helmet } from 'react-helmet'; 
+import OurCompanyFirst from './OurCompanyFirst';
+import OurCompanySecond from './OurCompanySecond';
+import OurCompanyThird from './OurCompanyThird';
+import OurCompanyFourth from './OurCompanyFourth';
+import OurCompanyFifth from './OurCompanyFifth';
+import OurCompanySixth from './OurCompanySixth';
 
-export default function Faqs() {
+
+export default function OurCompany() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
     const homeRef = useRef(null);
 
@@ -34,23 +39,33 @@ export default function Faqs() {
 
     return (
         <div className={styles.page} ref={homeRef}>
-            <Helmet>
-                <title>FAQS - Top Outsourcing Firm in the Philippines</title>
-                <meta property="og:url" content={window.location.href} />
-            </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>
                     <div className={styles.centerContent}>
-                        <h1 className={styles.title}>Frequently Asked Questions</h1>
                         <p className={styles.subtitle}>
-                            If you can’t find the answer you are looking for here, please{' '}
-                            <a className={styles.contactLink} href="/contact">contact us</a>.
+                            ABOUT THE LAUNCHPAD
                         </p>
+                        <h1 className={styles.title}>Solutions Aligned, Success Defined: Empowering Your Business with the Right People</h1>
+                        
+                        <a
+                            href="#"
+                            // target="_blank"
+                            // rel="noopener noreferrer"
+                            className={styles.applyButton}
+                        >
+                            <span className={styles.applyText}>Book a Consultation</span>
+                        </a>
+
                     </div>
                 </div>
             </div>
-            <FaqsFirst />
+            <OurCompanyFirst />
+            <OurCompanySecond />
+            <OurCompanyThird />
+            <OurCompanyFourth />
+            <OurCompanyFifth />
+            <OurCompanySixth />
             <Footer />
             {showScrollArrow && (
                 <div className={styles.scrollToTop} onClick={scrollToTop}>

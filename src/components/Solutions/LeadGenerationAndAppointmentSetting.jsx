@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import styles from './LeadGenerationAndAppointmentSetting.module.css';
 import Header from '../Header/Header';
 import SecondLeadGen from './SecondLeadGen';
@@ -38,6 +39,11 @@ export default function LeadGenerationAndAppointmentSettings() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Lead Generation and Appointment Setting- Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
+
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>
