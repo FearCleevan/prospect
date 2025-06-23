@@ -7,6 +7,7 @@ import LeadGenSecond from './LeadGenSecond';
 import LeadGenThird from './LeadGenThird';
 import LeadGenFourth from './LeadGenFourth';
 import LeadGenFifth from './LeadGenFifth';
+import { Helmet } from 'react-helmet'; 
 
 
 export default function LeadGen() {
@@ -38,6 +39,11 @@ export default function LeadGen() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Cost of DIY Lead Gen - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
+
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>

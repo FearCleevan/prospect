@@ -18,7 +18,7 @@ export default function Header() {
 
   const isActive = (path) => {
     return activePath === path ||
-      (path === '/solutions' && (
+      (path === '/lead-generation' && (
         activePath.includes('/lead-generation') ||
         activePath.includes('/medical-billing') ||
         activePath.includes('/virtual-assistant') ||
@@ -61,12 +61,12 @@ export default function Header() {
                 onMouseLeave={() => setIsSolutionsOpen(false)}
                 onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
               >
-                <a
-                  href="#solutions"
-                  className={`${styles.menuItem} ${isActive('#solutions') ? styles.active : ''}`}
+                <Link
+                  to="/lead-generation"
+                  className={`${styles.menuItem} ${isActive('/lead-generation') ? styles.active : ''}`}
                 >
                   Solutions <FaChevronDown className={styles.dropdownIcon} />
-                </a>
+                </Link>
                 {isSolutionsOpen && (
                   <div className={styles.dropdownContent}>
                     <Link

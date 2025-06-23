@@ -8,6 +8,7 @@ import OurCompanyThird from './OurCompanyThird';
 import OurCompanyFourth from './OurCompanyFourth';
 import OurCompanyFifth from './OurCompanyFifth';
 import OurCompanySixth from './OurCompanySixth';
+import { Helmet } from 'react-helmet';
 
 
 export default function OurCompany() {
@@ -39,6 +40,11 @@ export default function OurCompany() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Our Company - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
+
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>
@@ -47,7 +53,7 @@ export default function OurCompany() {
                             ABOUT THE LAUNCHPAD
                         </p>
                         <h1 className={styles.title}>Solutions Aligned, Success Defined: Empowering Your Business with the Right People</h1>
-                        
+
                         <a
                             href="#"
                             // target="_blank"

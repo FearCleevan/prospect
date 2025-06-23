@@ -40,6 +40,7 @@ export default function Careers() {
                 <title>Careers - Top Outsourcing Firm in the Philippines</title>
                 <meta property="og:url" content={window.location.href} />
             </Helmet>
+            
             <div className={styles.heroBackground}>
                 <Header />
                 <div className={styles.mainContainer}>

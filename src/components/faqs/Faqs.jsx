@@ -3,7 +3,7 @@ import styles from './Faqs.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import FaqsFirst from './FaqsFirst';
-import { Helmet } from 'react-helmet'; 
+import { Helmet } from 'react-helmet';
 
 export default function Faqs() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
@@ -36,7 +36,19 @@ export default function Faqs() {
         <div className={styles.page} ref={homeRef}>
             <Helmet>
                 <title>FAQS - Top Outsourcing Firm in the Philippines</title>
-                <meta property="og:url" content={window.location.href} />
+                <meta name="description" content="Find answers to common questions about our BPO services, pricing, and processes." />
+                <meta name="keywords" content="BPO FAQs, outsourcing questions, Philippines BPO" />
+
+                {/* OpenGraph */}
+                <meta property="og:title" content="FAQS - Top Outsourcing Firm in the Philippines" />
+                <meta property="og:description" content="Find answers to common questions about our BPO services." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://yourdomain.com/faqs" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="FAQS - Top Outsourcing Firm in the Philippines" />
+                <meta name="twitter:description" content="Find answers to common questions about our BPO services." />
             </Helmet>
             <div className={styles.heroBackground}>
                 <Header />
