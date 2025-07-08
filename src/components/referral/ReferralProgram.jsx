@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import ReferralProgramFirst from './ReferralProgramFirst';
 import ReferralProgramSecond from './ReferralProgramSecond';
 import ReferralProgramThird from './ReferralProgramThird';
+import { Helmet } from 'react-helmet';
 
 export default function ReferralProgram() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
@@ -35,6 +36,11 @@ export default function ReferralProgram() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Referral Program - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
+
             <div className={styles.heroBackground}>
                 <Header />
 

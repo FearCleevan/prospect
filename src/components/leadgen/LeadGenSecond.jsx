@@ -1,5 +1,8 @@
 import React from "react";
 import styles from "./LeadGenSecond.module.css";
+import toolsIcon from "../../assets/tools.png";
+import workforceIcon from "../../assets/workforce.png";
+import overheadIcon from "../../assets/overhead.png";
 
 const LeadGenSecond = () => {
     return (
@@ -9,7 +12,7 @@ const LeadGenSecond = () => {
                 <div className={styles.card}>
                     <div className={styles.titleContainer}>
                         <div className={styles.iconHolder}>
-                            <span role="img" aria-label="tools" className={styles.icon}>🔗</span>
+                            <img src={toolsIcon} alt="Tools" className={styles.icon} />
                         </div>
                         <h2 className={styles.cardTitle}>Tools</h2>
                     </div>
@@ -52,26 +55,26 @@ const LeadGenSecond = () => {
                 <div className={styles.card}>
                     <div className={styles.titleContainer}>
                         <div className={styles.iconHolder}>
-                            <span role="img" aria-label="workforce" className={styles.iconRed}>🗓️</span>
+                            <img src={workforceIcon} alt="Workforce" className={styles.icon} />
                         </div>
                         <h2 className={styles.cardTitle}>Workforce</h2>
                     </div>
                     <div className={styles.cardContent}>
                         <div className={styles.item}>
-                            <span className={styles.boldRed}>Full-time Cold Caller</span><br />
-                            <span className={styles.red}>Fee: $400/month</span>
+                            <span className={styles.boldRed}>Full-Time Linkedin Marketer</span><br />
+                            <span className={styles.red}>Fee: $850/month</span>
                         </div>
                         <div className={styles.item}>
-                            <span className={styles.boldRed}>Full-time Cold Caller</span><br />
-                            <span className={styles.red}>Fee: $45/month</span>
+                            <span className={styles.boldRed}>Caller</span><br />
+                            <span className={styles.red}>Fee: $1,200/month</span>
                         </div>
                         <div className={styles.item}>
                             <span className={styles.boldRed}>Email Marketing Specialist</span><br />
-                            <span className={styles.red}>Fee: $45/month</span>
+                            <span className={styles.red}>Fee: $900/month</span>
                         </div>
                         <div className={styles.item}>
                             <span className={styles.boldRed}>Account Manager and Campaign Manager</span><br />
-                            <span className={styles.red}>Fee: $440/month</span>
+                            <span className={styles.red}>Fee: $4200/month</span>
                         </div>
                         <div className={styles.item}>
                             <span className={styles.bold}>Other inclusion</span><br />
@@ -91,7 +94,7 @@ const LeadGenSecond = () => {
                 <div className={styles.card}>
                     <div className={styles.titleContainer}>
                         <div className={styles.iconHolder}>
-                            <span role="img" aria-label="overhead" className={styles.icon}>💲</span>
+                            <img src={overheadIcon} alt="Overhead" className={styles.icon} />
                         </div>
                         <h2 className={styles.cardTitle}>Overhead</h2>
                     </div>

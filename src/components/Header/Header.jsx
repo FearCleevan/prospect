@@ -10,7 +10,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showQuoteModal, setShowQuoteModal] = useState(false); // State for modal visibility
   const location = useLocation();
-  const [activePath, setActivePath] = useState('/');
+  const [activePath, setActivePath] = useState('/home');
 
   useEffect(() => {
     setActivePath(location.pathname);
@@ -18,7 +18,7 @@ export default function Header() {
 
   const isActive = (path) => {
     return activePath === path ||
-      (path === '/lead-generation' && (
+      (path === '#' && (
         activePath.includes('/lead-generation') ||
         activePath.includes('/medical-billing') ||
         activePath.includes('/virtual-assistant') ||
@@ -42,18 +42,20 @@ export default function Header() {
           </button>
 
           <div className={styles.logoContainer}>
-            <img src={logo} alt="Company Logo" className={styles.logo} />
+            <Link to="/">
+              <img src={logo} alt="Company Logo" className={styles.logo} />
+            </Link>
           </div>
 
           <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>
             <ul className={styles.menu}>
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className={`${styles.menuItem} ${isActive('/') ? styles.active : ''}`}
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li
                 className={styles.dropdown}
@@ -62,8 +64,8 @@ export default function Header() {
                 onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
               >
                 <Link
-                  to="/lead-generation"
-                  className={`${styles.menuItem} ${isActive('/lead-generation') ? styles.active : ''}`}
+                  to="#"
+                  className={`${styles.menuItem} ${isActive('#') ? styles.active : ''}`}
                 >
                   Solutions <FaChevronDown className={styles.dropdownIcon} />
                 </Link>
@@ -105,12 +107,12 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="/careers"
+                <Link
+                  to="/careers"
                   className={`${styles.menuItem} ${isActive('/careers') ? styles.active : ''}`}
                 >
                   Careers
-                </a>
+                </Link>
               </li>
               <li>
                 <Link

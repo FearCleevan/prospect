@@ -26,19 +26,44 @@ export default function Footer() {
             leadership team boasting over 40 years of combined experience.
           </p>
           <div className={styles.socialIcons}>
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com/thelaunchpadteam/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebook />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/launchpadteam"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedin />
             </a>
-            <a href="#" aria-label="TikTok">
+            <a
+              href="https://www.tiktok.com/@the.launchpad.fam"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+            >
               <FaTiktok />
             </a>
-            <a href="#" aria-label="Twitter">
+            <a
+              href="https://x.com/CareersLaunchp1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
               <FaTwitter />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/inc.thelaunchpad?fbclid=IwY2xjawLLl0FleHRuA2FlbQIxMABicmlkETFMdDNEZjZPWEJiTnhqS0Z2AR7gwx4ChntErGc-5m6DVE3xJasgGN7oblUCWBvqxEJNRR7B4CtFoJxfKbpN0Q_aem_7JYMzpHhyiJycs7PPbk7Ng"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
           </div>
@@ -81,7 +106,6 @@ export default function Footer() {
                 Company Profile
               </a>
             </li>
-
           </ul>
         </div>
 
@@ -93,11 +117,20 @@ export default function Footer() {
             <ul className={styles.footerList}>
               <li className={styles.contactItem}>
                 <FaPhone className={styles.contactIcon} />
-                <span>+1 919 546 2014</span>
+                <a href="tel:+19786937878" className={styles.contactLink}>
+                  +1 978 693 7878
+                </a>
               </li>
               <li className={styles.contactItem}>
                 <FaEnvelope className={styles.contactIcon} />
-                <span>sales@frelaunchpadteam.com</span>
+                <a
+                  href="https://mail.google.com/mail/u/0/?fs=1&to=sales@thelaunchpadteam.com&tf=cm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                >
+                  sales@thelaunchpadteam.com
+                </a>
               </li>
             </ul>
           </div>
@@ -106,11 +139,16 @@ export default function Footer() {
             <h3 className={styles.footerHeading}>USA HQ</h3>
             <div className={styles.address}>
               <FaMapMarkerAlt className={styles.addressIcon} />
-              <span>
-                1500 Colleen Avenue STE 1200
+              <a
+                href="https://www.google.com/maps/place/1309+Coffeen+Ave+STE+1200,+Sheridan,+WY+82801,+USA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.addressLink}
+              >
+                1309 Coffeen Avenue STE 1200
                 <br />
-                Sheridan, Wyoming (2200)
-              </span>
+                Sheridan, Wyoming 82801
+              </a>
             </div>
           </div>
 
@@ -118,13 +156,18 @@ export default function Footer() {
             <h3 className={styles.footerHeading}>PHILIPPINES HQ</h3>
             <div className={styles.address}>
               <FaMapMarkerAlt className={styles.addressIcon} />
-              <span>
+              <a
+                href="https://www.google.com/maps/place/Southern+Tourist+Inn+Supply/@7.0747759,125.6124979,17z/data=!3m1!4b1!4m6!3m5!1s0x32f96d98d296ab7f:0x489fc084d6e8bfe0!8m2!3d7.0747706!4d125.6150782!16s%2Fg%2F1vtqsm17?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.addressLink}
+              >
                 Southern Tourist Inn, 423 Villa
                 <br />
-                Airline St, Poblacion District, Davao City
+                Abrille St, Poblacion District, Davao City,
                 <br />
                 8000 Davao del Sur
-              </span>
+              </a>
             </div>
           </div>
         </div>

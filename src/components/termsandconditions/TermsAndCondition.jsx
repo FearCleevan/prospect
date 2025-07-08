@@ -3,6 +3,8 @@ import styles from './TermsAndCondition.module.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import TermsAndConditionFirst from './TermsAndConditionFirst';
+import { Helmet } from 'react-helmet';
+
 
 export default function TermsAndCondition() {
     const [showScrollArrow, setShowScrollArrow] = useState(false);
@@ -33,6 +35,11 @@ export default function TermsAndCondition() {
 
     return (
         <div className={styles.page} ref={homeRef}>
+            <Helmet>
+                <title>Terms and Conditions - Top Outsourcing Firm in the Philippines</title>
+                <meta property="og:url" content={window.location.href} />
+            </Helmet>
+
             <div className={styles.heroBackground}>
                 <Header />
 
