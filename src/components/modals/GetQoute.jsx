@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './GetQoute.module.css';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxgFXbKbCMCTs1ijygzHCLGiFYT_304XbHzDXpQElVvnntgHM8IGY68_uMS-Z1TXa8sNA/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx1gl0TaA5beQRnmgIa8nV-XZo5GtoAlYaM1MxVJazP-uvKqbxVIImJaFbdrivRqJVDgg/exec';
 
 const GetQuote = ({ isOpen, onClose }) => {
     // Form state

@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './ContactUsFirst.module.css';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxXbLWMPkinNCuS3OfPYxhbuTYhy_hikrI2UHcDw4M09Ys-gu1R4BtE4SFi0f6Br6VC/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbytFGESvmuFXqrnf1gqlIL5Lv6C6gGy9pdryEpWq2uDRmntXevMucB2WbyQ5Q7Mxtak/exec';
 
 const areaOptions = [
     'Lead Generation',
