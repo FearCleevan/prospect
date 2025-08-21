@@ -11,10 +11,10 @@ import SeventhContainer from '../../components/Container/SeventhContainer';
 import EightContainer from '../../components/Container/EightContainer';
 import NinthContainer from '../../components/Container/NinthContainer';
 import GetQuote from '../../components/modals/GetQoute';
-import logo1 from "../../assets/Logo-1.webp";
-import conversionGif from "../../assets/ConversionRate3DAnimatedIcon-ezgif.com-crop.gif";
-import profitGif from "../../assets/Profit-3D-Animated-Icon.gif";
-import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
+import logo1 from "../../assets/Logo-1.gif";
+// import conversionGif from "../../assets/ConversionRate3DAnimatedIcon-ezgif.com-crop.gif";
+// import profitGif from "../../assets/Profit-3D-Animated-Icon.gif";
+// import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
 import { Helmet } from 'react-helmet';  
 
 
@@ -136,9 +136,12 @@ export default function Home() {
           </div>
 
           <div className={styles.rightColumn}>
+            {/* Disabled 
             <img src={conversionGif} alt="Conversion Rate" className={styles.conversionGif} />
             <img src={profitGif} alt="Profit Growth" className={styles.profitGif} />
             <img src={emailGif} alt="Email Marketing" className={styles.emailGif} />
+            */}
+
             <img src={logo1} alt="Launchpad" className={styles.mainLogo} />
           </div>
         </div>
