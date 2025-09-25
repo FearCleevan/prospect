@@ -12,11 +12,7 @@ import EightContainer from '../../components/Container/EightContainer';
 import NinthContainer from '../../components/Container/NinthContainer';
 import GetQuote from '../../components/modals/GetQoute';
 import logo1 from "../../assets/Logo-1.gif";
-// import conversionGif from "../../assets/ConversionRate3DAnimatedIcon-ezgif.com-crop.gif";
-// import profitGif from "../../assets/Profit-3D-Animated-Icon.gif";
-// import emailGif from "../../assets/Email-Marketing-3D-Animated-Icon-1.gif";
-import { Helmet } from 'react-helmet';  
-
+import { Helmet } from 'react-helmet';
 
 export default function Home() {
   const [selectedOption, setSelectedOption] = useState('');
@@ -77,7 +73,7 @@ export default function Home() {
         <title>Home - Top Outsourcing Firm in the Philippines</title>
         <meta property="og:url" content={window.location.href} />
       </Helmet>
-      
+
       <div className={styles.heroBackground}>
         <Header />
         <div className={styles.mainContainer}>
@@ -136,7 +132,6 @@ export default function Home() {
           </div>
 
           <div className={styles.rightColumn}>
-
             <img src={logo1} alt="Launchpad" className={styles.mainLogo} />
           </div>
         </div>

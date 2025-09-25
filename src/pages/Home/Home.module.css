@@ -76,7 +76,7 @@
   max-width: 90%;
 }
 
-/* Combined Select & Button Styles */
+/* Centered Combined Select & Button Styles */
 .combinedContainer {
   display: flex;
   margin-top: 2rem;
@@ -195,10 +195,71 @@
   background-color: #cccccc;
 }
 
-/* Responsive adjustments */
+@media (max-width: 1700px) {
+
+  /* iMac 27", MacBook Pro 16" */
+  .mainContainer {
+    padding: 0 100px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1600px) {
+
+  /* iMac 27", MacBook Pro 16" */
+  .mainContainer {
+    padding: 0 100px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1520px) {
+
+  /* iMac 27", MacBook Pro 16" */
+  .mainContainer {
+    padding: 0 100px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* Mac-specific screen resolutions */
+@media (max-width: 1440px) {
+
+  /* iMac 27", MacBook Pro 16" */
+  .mainContainer {
+    padding: 0 100px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 1280px) {
+
+  /* MacBook Pro 14", iMac 24" */
+  .mainContainer {
+    padding: 0 80px;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+}
+
+/* Standard responsive adjustments */
 @media (max-width: 1200px) {
   .mainContainer {
-    padding: 0 40px;
+    padding: 0 60px;
   }
 
   .leftColumn {
@@ -207,11 +268,71 @@
   }
 }
 
+@media (max-width: 1024px) {
+  /* MacBook Air 13", iPad Pro */
+  .mainContainer {
+    padding: 0 40px;
+    height: auto;
+    min-height: 500px;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+  }
+
+  .leftColumn {
+    max-width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 0; /* Remove the bottom margin */
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .description {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .combinedContainer {
+    max-width: 450px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rightColumn {
+    display: none; /* Hide the right column */
+  }
+
+  /* If you need specific burger menu styles, add them here */
+  .menuButton {
+    display: block; /* Show burger menu button */
+  }
+
+  .navMenu {
+    display: none; /* Hide regular menu */
+  }
+
+  .navMenu.active {
+    display: flex; /* Show menu when active */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
 @media (max-width: 992px) {
   .mainContainer {
     flex-direction: column;
     height: auto;
-    padding: 40px 30px;
+    padding: 60px 30px;
     gap: 2rem;
   }
 
@@ -224,6 +345,8 @@
 
   .description {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .rightColumn {
@@ -231,9 +354,25 @@
   }
 }
 
+@media (max-width: 834px) {
+
+  /* iPad Pro 11", iPad Air */
+  .mainContainer {
+    padding: 50px 25px;
+  }
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .combinedContainer {
+    max-width: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .mainContainer {
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
 
   .leftColumn {
@@ -241,43 +380,92 @@
   }
 
   .title {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
 
   .combinedContainer {
     flex-direction: row;
+    max-width: 350px;
   }
 
   .selectDisplay {
     border-radius: 50px 0 0 50px;
     margin-bottom: 0;
+    padding: 0.8rem 1.2rem;
   }
 
   .combinedButton {
     border-radius: 0 50px 50px 0;
+    padding: 0 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
+
+  /* iPhone 14 Pro Max, iPhone 15 */
   .mainContainer {
-    padding: 25px 15px;
+    padding: 30px 15px;
   }
 
-  .leftColumn {
-    padding: 0 10px;
+  .title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+
+  /* iPhone 12 Pro, iPhone 13 */
+  .mainContainer {
+    padding: 25px 10px;
   }
 
   .title {
     font-size: 1.8rem;
   }
 
-  .combinedButton {
-    padding: 0 1.2rem;
-    font-size: 0.9rem;
+  .combinedContainer {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  /* iPhone SE, iPhone 8 */
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .combinedContainer {
+    flex-direction: column;
+    max-width: 280px;
   }
 
   .selectDisplay {
-    padding: 0.9rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .combinedButton {
+    border-radius: 50px;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+
+  /* Small mobile devices */
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .combinedContainer {
+    max-width: 250px;
   }
 }
 
@@ -309,30 +497,6 @@
   height: 570px;
   width: auto;
   z-index: 1;
-}
-
-.conversionGif {
-  position: absolute;
-  width: 200px;
-  top: -2%;
-  right: 15%;
-  z-index: 2;
-}
-
-.profitGif {
-  position: absolute;
-  width: 200px;
-  top: 8%;
-  left: -4%;
-  z-index: 2;
-}
-
-.emailGif {
-  position: absolute;
-  width: 160px;
-  bottom: 38%;
-  left: -7%;
-  z-index: 2;
 }
 
 /* Scroll to top arrow styles */
