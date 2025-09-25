@@ -136,11 +136,6 @@ export default function Home() {
           </div>
 
           <div className={styles.rightColumn}>
-            {/* Disabled 
-            <img src={conversionGif} alt="Conversion Rate" className={styles.conversionGif} />
-            <img src={profitGif} alt="Profit Growth" className={styles.profitGif} />
-            <img src={emailGif} alt="Email Marketing" className={styles.emailGif} />
-            */}
 
             <img src={logo1} alt="Launchpad" className={styles.mainLogo} />
           </div>

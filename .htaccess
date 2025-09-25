@@ -1,0 +1,87 @@
+# ===========================================================
+# Force www and HTTPS
+# ===========================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect to https://www
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.thelaunchpadteam.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+
+# ===========================================================
+# BEGIN LSCACHE
+# LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block!
+# ===========================================================
+<IfModule LiteSpeed>
+  RewriteEngine on
+  CacheLookup on
+  RewriteRule .* - [E=Cache-Control:no-autoflush]
+  RewriteRule litespeed/debug/.*\.log$ - [F,L]
+  RewriteRule \.litespeed_conf\.dat - [F,L]
+
+  ### marker ASYNC start ###
+  RewriteCond %{REQUEST_URI} /wp-admin/admin-ajax\.php
+  RewriteCond %{QUERY_STRING} action=async_litespeed
+  RewriteRule .* - [E=noabort:1]
+  ### marker ASYNC end ###
+
+  ### marker CACHE RESOURCE start ###
+  RewriteRule wp-content/.*/[^/]*(responsive|css|js|dynamic|loader|fonts)\.php - [E=cache-control:max-age=3600]
+  ### marker CACHE RESOURCE end ###
+
+  ### marker DROPQS start ###
+  CacheKeyModify -qs:fbclid
+  CacheKeyModify -qs:gclid
+  CacheKeyModify -qs:utm*
+  CacheKeyModify -qs:_ga
+  ### marker DROPQS end ###
+</IfModule>
+# END LSCACHE
+
+
+# ===========================================================
+# BEGIN NON_LSCACHE
+# LITESPEED WP CACHE PLUGIN - Do not edit the contents of this block!
+# ===========================================================
+# (empty block - safe keep)
+# END NON_LSCACHE
+
+
+# ===========================================================
+# WordPress compatibility (safe keep)
+# ===========================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+
+  # If request is not a real file or directory → pass to index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+
+# ===========================================================
+# React SPA Routing
+# ===========================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Skip wp-admin and system paths
+  RewriteCond %{REQUEST_URI} !^/wp-admin
+  RewriteCond %{REQUEST_URI} !^/wp-login\.php
+  RewriteCond %{REQUEST_URI} !^/wp-.*$
+
+  # If file or folder exists → serve it
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise → React handles it via index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
