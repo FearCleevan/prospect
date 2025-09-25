@@ -188,6 +188,30 @@
       padding-right: 20px;
     }
   }
+
+  @media (max-width: 1024px) {
+    .mainContainer {
+      flex-direction: column;
+      height: auto;
+      padding: 40px 30px;
+      gap: 2rem;
+    }
+  
+    .leftColumn,
+    .rightColumn {
+      max-width: 100%;
+      text-align: center;
+      padding: 0 20px;
+    }
+  
+    .description {
+      max-width: 100%;
+    }
+  
+    .rightColumn {
+      display: none;
+    }
+  }
   
   @media (max-width: 992px) {
     .mainContainer {
