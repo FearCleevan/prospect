@@ -21,23 +21,26 @@ export default function EightContainer() {
         variableWidth: false,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1024, // tablets and below
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    centerMode: false,  // disable center mode
                     variableWidth: false
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 768, // mobile
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    centerMode: true
+                    centerMode: false,  // no peeking cards
+                    variableWidth: false
                 }
             }
         ]
     };
+
 
     const cards = [
         {

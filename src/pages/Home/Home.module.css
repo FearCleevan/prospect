@@ -273,7 +273,6 @@
   .mainContainer {
     padding: 0 40px;
     height: auto;
-    min-height: 500px;
     justify-content: center; /* Center the content vertically */
     align-items: center; /* Center the content horizontally */
   }
