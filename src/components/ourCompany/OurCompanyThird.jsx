@@ -33,6 +33,10 @@ const OurCompanyThird = () => {
                 delay: 3000,
                 disableOnInteraction: false,
               }}
+              // pagination={{
+              //   clickable: true,
+              //   el: `.${styles.pagination}`,
+              // }}
               className={styles.swiper}
             >
               {stats.map((stat, index) => (
